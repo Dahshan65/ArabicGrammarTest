@@ -92,6 +92,17 @@ button{border-radius:999px;padding:11px 26px;font-weight:700;letter-spacing:0}
 
 button,input,.option,.question,.stage,.card,.credit,.enter{font-family:'Noto Naskh Arabic',Tahoma,serif}
 body{line-height:1.9}
+
+.option .lt,.stage .no{line-height:1!important;padding:0!important;display:flex!important;align-items:center;justify-content:center;font-family:Tahoma,Arial,sans-serif!important;font-weight:700}
+.option .lt{width:52px;height:52px;min-width:52px;font-size:26px}
+.stage .no{padding-top:0}
+
+/* بدون دوائر: حروف وأرقام فقط */
+.option .lt,.stage .no{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;color:var(--c)!important;width:auto!important;min-width:34px!important;height:auto!important;font-family:"Noto Naskh Arabic",Tahoma,serif!important;font-weight:800;line-height:1.4!important}
+.option .lt{font-size:30px!important}
+.option.correct .lt{color:var(--okb)!important}
+.option.wrong .lt{color:var(--badb)!important}
+.stage .no{font-size:44px!important}
 </style>
 </head>
 <body>
