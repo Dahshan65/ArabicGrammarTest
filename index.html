@@ -5,34 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b3c5d">
 <title>مسابقة قواعد اللغة العربية</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b3c5d;--card:#fff;--ink:#1e2240;--mut:#6b7090;--pri:#0e7490;--pri2:#0b3c5d;--gold:#f59e0b;--line:#e4e6f2;--soft:#f6f7fc;--ok:#dcf5e6;--okb:#1f9d5c;--bad:#fde3e6;--badb:#d93a50;--c:#0e7490;--sh:0 10px 30px rgba(10,40,80,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#06202f;--card:#14202e;--ink:#eceefa;--mut:#9aa7c4;--line:#27364d;--soft:#1b2a3d;--ok:#143b2b;--bad:#47202a;--sh:0 10px 30px rgba(0,0,0,.45)}}
 *{box-sizing:border-box}
 html,body{margin:0;max-width:100%;overflow-x:hidden}
-body{background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,Arial,sans-serif;line-height:1.8;min-height:100%;font-size:12.8px;padding-bottom:calc(46px + env(safe-area-inset-bottom,0px));background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.4'%3E%3Crect x='16' y='16' width='32' height='32'/%3E%3Crect x='16' y='16' width='32' height='32' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Cpath d='M0 0l8 8M64 0l-8 8M0 64l8-8M64 64l-8-8'/%3E%3C/g%3E%3C/svg%3E");background-size:64px 64px;background-attachment:fixed}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Naskh Arabic",Tahoma,serif;line-height:1.8;min-height:100%;font-size:20.5px;padding-bottom:calc(46px + env(safe-area-inset-bottom,0px));background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.4'%3E%3Crect x='16' y='16' width='32' height='32'/%3E%3Crect x='16' y='16' width='32' height='32' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Cpath d='M0 0l8 8M64 0l-8 8M0 64l8-8M64 64l-8-8'/%3E%3C/g%3E%3C/svg%3E");background-size:64px 64px;background-attachment:fixed}
 .hero{background:radial-gradient(circle at 12% 10%,#f59e0b44 0,transparent 38%),radial-gradient(circle at 88% 0,#22d3ee55 0,transparent 40%),linear-gradient(135deg,#041b2b,#0b3c5d 55%,#1a6a8a);color:#fff;text-align:center;position:relative}
 .hero:after{content:"";position:absolute;inset:auto 0 0 0;height:5px;background:linear-gradient(90deg,#f59e0b,#ec4899,#8b5cf6,#06b6d4,#10b981)}
 .welcome{min-height:calc(100vh - 46px);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 16px}
-.welcome .bismillah{color:#fde68a;font-size:18px}
-.welcome h1{margin:6px 0;font-size:clamp(26px,7vw,44px);font-weight:800}
-.welcome p{margin:4px auto;max-width:620px;opacity:.93;font-size:14px}
-.enter{margin-top:26px;background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;font-weight:800;font-size:18px;padding:14px 44px;border-radius:99px;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.welcome .bismillah{color:#fde68a;font-size:28.8px}
+.welcome h1{margin:6px 0;font-size:clamp(30px,8vw,52px);font-weight:800}
+.welcome p{margin:4px auto;max-width:620px;opacity:.93;font-size:22.4px}
+.enter{margin-top:26px;background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;font-weight:800;font-size:28.8px;padding:14px 44px;border-radius:99px;box-shadow:0 10px 24px rgba(0,0,0,.35)}
 .wrap{position:relative;z-index:1;width:100%;max-width:1000px;margin:14px auto 0;padding:0 14px 30px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--sh)}
-h2{margin:0 0 10px;color:var(--ink);font-size:17.6px}
+h2{margin:0 0 10px;color:var(--ink);font-size:28.2px}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
 .stat{border-radius:16px;padding:14px;text-align:center;color:#fff}
 .stat:nth-child(1){background:linear-gradient(135deg,#06b6d4,#3b82f6)}
 .stat:nth-child(2){background:linear-gradient(135deg,#f59e0b,#f97316)}
 .stat:nth-child(3){background:linear-gradient(135deg,#ec4899,#8b5cf6)}
-.stat b{display:block;font-size:20.8px;line-height:1.4}
-.stat span{font-size:10.4px;opacity:.95}
+.stat b{display:block;font-size:33.3px;line-height:1.4}
+.stat span{font-size:16.6px;opacity:.95}
 .bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden}
 .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);border-radius:99px;transition:width .3s}
 #quiz .bar i{background:var(--c)}
-button{font:inherit;font-size:12px;cursor:pointer;border:0;border-radius:12px;padding:11px 18px;transition:transform .1s,filter .15s}
+button{font:inherit;font-size:19.2px;cursor:pointer;border:0;border-radius:12px;padding:11px 18px;transition:transform .1s,filter .15s}
 button:hover:not(:disabled){filter:brightness(1.08)}button:active:not(:disabled){transform:scale(.98)}
 button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .primary{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;font-weight:700;box-shadow:0 6px 16px #0e749040}
@@ -52,43 +52,46 @@ button:disabled{opacity:.5;cursor:not-allowed}
 #quiz,#result{border-top:6px solid var(--c)}
 .qhead{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--mut);font-weight:600}
 .qhead strong{color:var(--c)}
-.question{font-size:clamp(15.2px,2.9vw,20px);font-weight:800;margin:18px 0}
+.question{font-size:clamp(24.3px,4.6vw,32px);font-weight:800;margin:18px 0}
 .options{display:grid;gap:10px}
 .option{width:100%;text-align:right;background:var(--soft);border:1.5px solid var(--line);color:var(--ink);padding:12px 14px;font-weight:600;display:flex;align-items:center;gap:12px}
-.option .lt{flex:none;width:32px;height:32px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-size:11.2px;font-weight:800}
+.option .lt{flex:none;width:32px;height:32px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-size:17.9px;font-weight:800}
 .option:hover:not(:disabled){border-color:var(--c)}
 .option.correct{background:var(--ok);border-color:var(--okb)}
 .option.correct .lt{background:var(--okb)}
 .option.wrong{background:var(--bad);border-color:var(--badb)}
 .option.wrong .lt{background:var(--badb)}
 .feedback{font-weight:700;min-height:34px;margin:12px 0}
-.muted{color:var(--mut);font-size:11.2px}
+.muted{color:var(--mut);font-size:17.9px}
 .hidden{display:none!important}
 .result{text-align:center}
-.score{font-size:46.4px;font-weight:800;line-height:1.2;background:linear-gradient(135deg,var(--c),#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+.score{font-size:74.2px;font-weight:800;line-height:1.2;background:linear-gradient(135deg,var(--c),#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
 .review-item{border-bottom:1px solid var(--line);padding:12px 0}
 footer{text-align:center;padding:10px 12px 30px;color:#e6f6ff}
 .social a{display:inline-block;text-decoration:none;padding:8px 18px;margin:5px;border-radius:12px;color:#fff;font-weight:600}
 .social a:nth-child(1){background:#1877f2}
 .social a:nth-child(2){background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}
-.credit{position:fixed;bottom:0;left:0;right:0;z-index:999;text-align:center;font-weight:700;font-size:13px;color:#fff;background:rgba(4,27,43,.92);border-top:1px solid #ffffff33;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(4px)}
-@media(max-width:520px){.card{padding:16px}.stats{gap:6px}.stat b{font-size:16px}}
+.credit{position:fixed;bottom:0;left:0;right:0;z-index:999;text-align:center;font-weight:700;font-size:20.8px;color:#fff;background:rgba(4,27,43,.92);border-top:1px solid #ffffff33;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(4px)}
+@media(max-width:520px){.card{padding:16px}.stats{gap:6px}.stat b{font-size:25.6px}}
 
 /* أزرار دائرية بنمط عربي */
-button,.enter,h2,.welcome h1,.levelhead,.qhead strong{font-family:"Reem Kufi",Cairo,Tahoma,sans-serif}
+button,.enter,h2,.welcome h1,.levelhead,.qhead strong{font-family:"Noto Naskh Arabic",Tahoma,serif}
 button{border-radius:999px;padding:11px 26px;font-weight:700;letter-spacing:0}
 .primary{background:linear-gradient(135deg,#0e7490,#0b3c5d);color:#fff;border:2px solid #f5c26b;box-shadow:0 0 0 3px rgba(245,158,11,.22),0 6px 16px rgba(11,60,93,.35)}
 .secondary{background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:0 0 0 3px rgba(14,116,144,.10)}
-.enter{border:3px solid #fde68a;box-shadow:0 0 0 5px rgba(253,230,138,.28),0 10px 24px rgba(0,0,0,.35);padding:14px 52px;font-size:20px}
+.enter{border:3px solid #fde68a;box-shadow:0 0 0 5px rgba(253,230,138,.28),0 10px 24px rgba(0,0,0,.35);padding:14px 52px;font-size:32px}
 .stage{border-radius:26px;border-top-width:1px;text-align:center;align-items:center;padding:20px 16px}
-.stage .no{width:54px;height:54px;border-radius:50%;font-size:22px;font-family:"Reem Kufi",Cairo,sans-serif;border:3px solid #fff;box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 35%,transparent)}
-.stage strong{font-size:13.5px}
+.stage .no{width:54px;height:54px;border-radius:50%;font-size:35.2px;font-family:"Noto Naskh Arabic",Tahoma,serif;border:3px solid #fff;box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 35%,transparent)}
+.stage strong{font-size:21.6px}
 .stage button{border-radius:999px;border:2px solid #fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}
 .stage button:disabled{border-color:var(--line);box-shadow:none}
 .option{border-radius:30px;padding:12px 18px}
-.option .lt{width:36px;height:36px;font-size:15px;font-family:"Reem Kufi",Cairo,sans-serif;border:2px solid #fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}
+.option .lt{width:36px;height:36px;font-size:24px;font-family:"Noto Naskh Arabic",Tahoma,serif;border:2px solid #fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}
 .stat{border-radius:26px}
 .card{border-radius:28px}
+
+button,input,.option,.question,.stage,.card,.credit,.enter{font-family:'Noto Naskh Arabic',Tahoma,serif}
+body{line-height:1.9}
 </style>
 </head>
 <body>
