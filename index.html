@@ -112,6 +112,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:1
 (function(){
   function fix(){
     try{
+      if(/Instagram|FBAN|FBAV/i.test(navigator.userAgent)){document.body.style.zoom='0.7';return;}
       var p=document.createElement('div');
       p.style.cssText='position:absolute;left:-9999px;top:0;visibility:hidden;margin:0;padding:0;border:0;font:100px/1 Arial,sans-serif';
       p.textContent='M';
