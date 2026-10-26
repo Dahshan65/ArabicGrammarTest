@@ -103,7 +103,28 @@ body{line-height:1.9}
 .option.correct .lt{color:var(--okb)!important}
 .option.wrong .lt{color:var(--badb)!important}
 .stage .no{font-size:44px!important}
+
+/* منع تكبير النص التلقائي في متصفح إنستغرام/فيسبوك الداخلي */
+html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}
 </style>
+<script>
+/* تعويض تكبير الخط في المتصفحات الداخلية (إنستغرام/فيسبوك): نقيس الحجم الفعلي ونصحّحه */
+(function(){
+  function fix(){
+    try{
+      var p=document.createElement('div');
+      p.style.cssText='position:absolute;left:-9999px;top:0;visibility:hidden;margin:0;padding:0;border:0;font:100px/1 Arial,sans-serif';
+      p.textContent='M';
+      document.body.appendChild(p);
+      var h=p.getBoundingClientRect().height;
+      document.body.removeChild(p);
+      var r=h/100;
+      if(r>1.06&&r<3){document.body.style.zoom=(1/r).toFixed(3);}
+    }catch(e){}
+  }
+  if(document.body)fix();else document.addEventListener('DOMContentLoaded',fix);
+})();
+</script>
 <script data-goatcounter="https://arabicquiz.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
