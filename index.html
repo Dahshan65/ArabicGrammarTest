@@ -140,7 +140,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:1
 </section>
 <main class="wrap hidden" id="mainWrap">
 <section id="home" class="card">
-<div id="academy"><h2>تَعَلَّمْ • تَدَرَّبْ • أَتْقِنْ</h2><p class="muted">مَسَارٌ تَعْلِيمِيٌّ جَدِيدٌ فِي النَّحْوِ وَالصَّرْفِ</p><div class="newgrid"><button class="primary" onclick="openLesson()">المستوى التأسيسي — الدرس التجريبي</button><div class="pending">المستوى المتوسط — قيد الإعداد</div><div class="pending">المستوى المتقدم — قيد الإعداد</div></div><p class="muted">المرجع المخطط للمنهج: النحو الواضح — علي الجارم ومصطفى أمين.</p><hr></div><h2>المسابقة الأصلية</h2>
+<div id="academy"><h2>تَعَلَّمْ • تَدَرَّبْ • أَتْقِنْ</h2><p class="muted">مَسَارٌ تَعْلِيمِيٌّ جَدِيدٌ فِي النَّحْوِ وَالصَّرْفِ</p><div class="newgrid"><button class="primary" onclick="openLesson()">المستوى التأسيسي — ٦ دروس</button><div class="pending">المستوى المتوسط — قيد الإعداد</div><div class="pending">المستوى المتقدم — قيد الإعداد</div></div><p class="muted">المرجع المخطط للمنهج: النحو الواضح — علي الجارم ومصطفى أمين.</p><hr></div><h2>المسابقة الأصلية</h2>
 <p class="muted">في كل مرحلة 50 سؤالًا، وتحتاج إلى 35 إجابة صحيحة لاجتيازها وفتح التالية. يُحفظ تقدمك على هذا الجهاز.</p>
 <div class="stats">
 <div class="stat"><b id="stDone">0</b><span>مراحل مجتازة</span></div>
@@ -154,7 +154,7 @@ html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:1
 <button class="secondary" onclick="resetProgress()">إعادة ضبط التقدم</button>
 </div>
 </section>
-<section id="lesson" class="card hidden"><h2>الجُمْلَةُ الْمُفِيدَةُ</h2><p>الجُمْلَةُ الْمُفِيدَةُ تَرْكِيبٌ يُفِيدُ مَعْنًى تَامًّا يَحْسُنُ السُّكُوتُ عَلَيْهِ.</p><p>مِثَالٌ: أَشْرَقَتِ الشَّمْسُ. — الْعِلْمُ نُورٌ.</p><p>أَمَّا «فِي الْحَدِيقَةِ» وَحْدَهَا فَلَا تُفِيدُ مَعْنًى تَامًّا دُونَ سِيَاقٍ يُكْمِلُهَا.</p><p class="muted">تدريب تجريبي: ثلاثة أسئلة مع تعليل الإجابات.</p><button class="primary" onclick="demoStart()">ابدأ التدريب</button><div id="demo"></div><div class="actions"><button class="secondary" onclick="goHome()">الرئيسية</button></div></section><section id="quiz" class="card hidden">
+<section id="lesson" class="card hidden"><div id="lessonPicker"></div><h2 id="lessonTitle">الجُمْلَةُ الْمُفِيدَةُ</h2><div id="lessonContent"></div><button class="primary" onclick="demoStart()">ابدأ التدريب</button><div id="demo"></div><div class="actions"><button class="secondary" onclick="goHome()">الرئيسية</button></div></section><section id="quiz" class="card hidden">
 <div class="qhead"><strong id="stageLabel"></strong><span id="questionNumber"></span></div>
 <div class="bar" style="margin:12px 0"><i id="progressBar"></i></div>
 <div id="scoreLabel" class="muted"></div>
@@ -705,10 +705,26 @@ goHome=function(){oldHome();document.getElementById('academy').classList.remove(
 function openLesson(){show('lesson');$('lesson').classList.remove('hidden');$('home').classList.add('hidden');}
 const originalShow=show;
 show=function(id){$('lesson').classList.add('hidden');originalShow(id);};
-const demo=[['أَيُّ التَّرَاكِيبِ جُمْلَةٌ مُفِيدَةٌ؟','أَشْرَقَتِ الشَّمْسُ.','فِي الْحَدِيقَةِ','كِتَابُ الطَّالِبِ','لِأَنَّ أَشْرَقَتِ الشَّمْسُ تُفِيدُ مَعْنًى تَامًّا، أَمَّا التَّرْكِيبَانِ الْآخَرَانِ فَلَا يَتِمُّ بِهِمَا الْمَعْنَى فِي هَذَا السِّيَاقِ.'],['أَكْمِلْ: الطَّالِبُ ...','مُجْتَهِدٌ','فِي','مِنْ','مُجْتَهِدٌ خَبَرٌ يُتَمِّمُ مَعْنَى الْمُبْتَدَأِ.'],['أَيُّ التَّرَاكِيبِ يَحْتَاجُ إِلَى تَكْمِلَةٍ؟','إِذَا حَضَرَ الْمُعَلِّمُ','نَجَحَ الطَّالِبُ','الْعِلْمُ نُورٌ','إِذَا حَضَرَ الْمُعَلِّمُ تَحْتَاجُ إِلَى جَوَابٍ يُتَمِّمُ الْمَعْنَى.']];
+let demo=[['أَيُّ التَّرَاكِيبِ جُمْلَةٌ مُفِيدَةٌ؟','أَشْرَقَتِ الشَّمْسُ.','فِي الْحَدِيقَةِ','كِتَابُ الطَّالِبِ','لِأَنَّ أَشْرَقَتِ الشَّمْسُ تُفِيدُ مَعْنًى تَامًّا، أَمَّا التَّرْكِيبَانِ الْآخَرَانِ فَلَا يَتِمُّ بِهِمَا الْمَعْنَى فِي هَذَا السِّيَاقِ.'],['أَكْمِلْ: الطَّالِبُ ...','مُجْتَهِدٌ','فِي','مِنْ','مُجْتَهِدٌ خَبَرٌ يُتَمِّمُ مَعْنَى الْمُبْتَدَأِ.'],['أَيُّ التَّرَاكِيبِ يَحْتَاجُ إِلَى تَكْمِلَةٍ؟','إِذَا حَضَرَ الْمُعَلِّمُ','نَجَحَ الطَّالِبُ','الْعِلْمُ نُورٌ','إِذَا حَضَرَ الْمُعَلِّمُ تَحْتَاجُ إِلَى جَوَابٍ يُتَمِّمُ الْمَعْنَى.']];
 let di=0,ds=0;
 function demoStart(){di=0;ds=0;demoRender();}
 function demoRender(){const r=$('demo');r.replaceChildren();if(di===demo.length){r.textContent='النَّتِيجَةُ: '+ds+' / '+demo.length;return;}const q=demo[di];const h=document.createElement('h3');h.textContent=q[0];r.append(h);const opts=q.slice(1,4);for(let i=opts.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[opts[i],opts[j]]=[opts[j],opts[i]];}opts.forEach(t=>{let b=document.createElement('button');b.className='option';b.textContent=t;b.onclick=()=>{r.querySelectorAll('button').forEach(x=>{x.disabled=true;if(x.textContent===q[1])x.classList.add('correct');});if(t===q[1])ds++;else b.classList.add('wrong');let f=document.createElement('p');f.textContent=(t===q[1]?'أَحْسَنْتَ! ':'الصَّوَابُ: '+q[1]+' — ')+q[4];r.append(f);let n=document.createElement('button');n.className='primary';n.textContent='التَّالِي';n.onclick=()=>{di++;demoRender();};r.append(n);};r.append(b);});}
+
+const lessons=[
+['الجُمْلَةُ الْمُفِيدَةُ','تَرْكِيبٌ يُفِيدُ مَعْنًى تَامًّا يَحْسُنُ السُّكُوتُ عَلَيْهِ.','أَشْرَقَتِ الشَّمْسُ. — الْعِلْمُ نُورٌ.',demo],
+['أَقْسَامُ الْكَلَامِ','الْكَلِمَةُ اسْمٌ أَوْ فِعْلٌ أَوْ حَرْفٌ.','مَدْرَسَةٌ: اسْمٌ. كَتَبَ: فِعْلٌ. فِي: حَرْفٌ.',[
+['مَا نَوْعُ كَلِمَةِ «قَلَمٌ»؟','اسْمٌ','فِعْلٌ','حَرْفٌ','تَدُلُّ عَلَى شَيْءٍ وَلَا تَقْتَرِنُ بِزَمَنٍ.'],['مَا نَوْعُ «يَكْتُبُ»؟','فِعْلٌ','اسْمٌ','حَرْفٌ','تَدُلُّ عَلَى حَدَثٍ مُقْتَرِنٍ بِزَمَنٍ.'],['مَا نَوْعُ «مِنْ»؟','حَرْفٌ','اسْمٌ','فِعْلٌ','يَظْهَرُ مَعْنَاهُ مَعَ غَيْرِهِ.']]],
+['أَنْوَاعُ الْفِعْلِ','الْفِعْلُ مَاضٍ أَوْ مُضَارِعٌ أَوْ أَمْرٌ.','قَرَأَ — يَقْرَأُ — اقْرَأْ.',[
+['مَا نَوْعُ «جَلَسَ»؟','مَاضٍ','مُضَارِعٌ','أَمْرٌ','يَدُلُّ عَلَى حَدَثٍ وَقَعَ فِي الْمَاضِي.'],['مَا نَوْعُ «يَجْلِسُ»؟','مُضَارِعٌ','مَاضٍ','أَمْرٌ','يَدُلُّ عَلَى حَدَثٍ فِي الْحَالِ أَوِ الاسْتِقْبَالِ.'],['مَا نَوْعُ «اجْلِسْ»؟','أَمْرٌ','مَاضٍ','مُضَارِعٌ','يَدُلُّ عَلَى طَلَبِ حُدُوثِ الْفِعْلِ.']]],
+['الْفَاعِلُ','الْفَاعِلُ اسْمٌ مَرْفُوعٌ أُسْنِدَ إِلَيْهِ فِعْلٌ مَبْنِيٌّ لِلْمَعْلُومِ.','حَضَرَ الطَّالِبُ: الطَّالِبُ فَاعِلٌ مَرْفُوعٌ.',[
+['مَنِ الْفَاعِلُ فِي «نَجَحَ خَالِدٌ»؟','خَالِدٌ','نَجَحَ','لَا فَاعِلَ','خَالِدٌ هُوَ الَّذِي أُسْنِدَ إِلَيْهِ النَّجَاحُ.'],['مَا حُكْمُ الْفَاعِلِ؟','الرَّفْعُ','النَّصْبُ','الْجَرُّ','الْفَاعِلُ مَرْفُوعٌ.'],['أَكْمِلْ: حَضَرَ ...','الْمُعَلِّمُ','الْمُعَلِّمَ','الْمُعَلِّمِ','الْمُعَلِّمُ فَاعِلٌ مَرْفُوعٌ بِالضَّمَّةِ.']]],
+['الْمَفْعُولُ بِهِ','اسْمٌ مَنْصُوبٌ يَقَعُ عَلَيْهِ فِعْلُ الْفَاعِلِ.','قَرَأَ الطَّالِبُ الْكِتَابَ: الْكِتَابَ مَفْعُولٌ بِهِ.',[
+['حَدِّدِ الْمَفْعُولَ بِهِ: فَتَحَ خَالِدٌ الْبَابَ.','الْبَابَ','خَالِدٌ','فَتَحَ','الْبَابَ هُوَ مَا وَقَعَ عَلَيْهِ الْفَتْحُ.'],['مَا حُكْمُ الْمَفْعُولِ بِهِ؟','النَّصْبُ','الرَّفْعُ','الْجَرُّ','الْمَفْعُولُ بِهِ مَنْصُوبٌ.'],['أَكْمِلْ: شَرِبَ الطِّفْلُ ...','الْحَلِيبَ','الْحَلِيبُ','الْحَلِيبِ','الْحَلِيبَ مَفْعُولٌ بِهِ مَنْصُوبٌ بِالْفَتْحَةِ.']]],
+['الْمُبْتَدَأُ وَالْخَبَرُ','الْمُبْتَدَأُ اسْمٌ مَرْفُوعٌ، وَالْخَبَرُ يُتَمِّمُ مَعْنَاهُ، وَهُمَا مَرْفُوعَانِ فِي الْأَصْلِ.','الْجَوُّ جَمِيلٌ: الْجَوُّ مُبْتَدَأٌ وَجَمِيلٌ خَبَرٌ.',[
+['مَا الْمُبْتَدَأُ فِي «الْعِلْمُ نُورٌ»؟','الْعِلْمُ','نُورٌ','لَا مُبْتَدَأَ','الْعِلْمُ هُوَ الْمُخْبَرُ عَنْهُ.'],['مَا الْخَبَرُ فِي «الْبَيْتُ وَاسِعٌ»؟','وَاسِعٌ','الْبَيْتُ','لَا خَبَرَ','وَاسِعٌ يُتَمِّمُ مَعْنَى الْمُبْتَدَأِ.'],['أَكْمِلْ: الْوَرْدَةُ ...','جَمِيلَةٌ','جَمِيلَةً','جَمِيلَةٍ','جَمِيلَةٌ خَبَرٌ مَرْفُوعٌ بِالضَّمَّةِ.']]]];
+function selectLesson(i){const l=lessons[i];$('lessonTitle').textContent=l[0];$('lessonContent').replaceChildren();for(const t of [l[1],l[2],'تَدْرِيبٌ: '+l[3].length+' أَسْئِلَةٍ مَعَ التَّعْلِيلِ.']){const p=document.createElement('p');p.textContent=t;$('lessonContent').append(p);}demo=l[3];$('demo').replaceChildren();}
+const previousOpenLesson=openLesson;
+openLesson=function(){previousOpenLesson();const p=$('lessonPicker');p.replaceChildren();const sel=document.createElement('select');sel.style.cssText='width:100%;font:inherit;margin-bottom:16px';lessons.forEach((l,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+' — '+l[0];sel.append(o);});sel.onchange=()=>selectLesson(Number(sel.value));p.append(sel);selectLesson(0);};
 
 </script>
 </body>
